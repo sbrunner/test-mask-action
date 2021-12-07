@@ -1,3 +1,11 @@
 #!/bin/bash -eux
 
+stdbuf --output=0 --error=0 echo "::group::Init"
+stdbuf --output=0 --error=0 echo "Init"
+stdbuf --output=0 --error=0 echo "::endgroup::"
+
 echo "::add-mask::086abcdef010"
+
+stdbuf --output=0 --error=0 echo "::group::End"
+stdbuf --output=0 --error=0 echo "end"
+stdbuf --output=0 --error=0 echo "::endgroup::"
