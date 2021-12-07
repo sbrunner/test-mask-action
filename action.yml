@@ -1,0 +1,31 @@
+---
+name: initialise-gopass-summon
+description: Initialise gopass/summon for Camptocamp geospatial projects
+inputs:
+  patterns:
+    description: |
+      Space separated list of patterns to service to be apply:
+        - docker
+        - pypi
+        - npm
+    default: ''
+  ci-gpg-private-key:
+    description: Should be secrets.CI_GPG_PRIVATE_KEY
+  github-gopass-ci-token:
+    description: Should be secrets.GOPASS_CI_GITHUB_TOKEN
+    required: true
+  gopass_version:
+    description: Gopass version
+    default: 1.10.1
+  summon_version:
+    description: Summon version
+    default: 0.8.3
+  gpg-fingerprint:
+    description: The GPG key fingerprint
+    default: 30C9B913FD42EF13
+  github-repository:
+    descriontion: The GutHub repository
+    default: camptocamp/geospatial-ci-pass
+runs:
+  using: node12
+  main: index.js
